@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="uqR-QY-Xra">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Meds Table View Controller-->
+        <scene sceneID="SNV-bT-rJ9">
+            <objects>
+                <tableViewController id="seR-Cy-tEW" customClass="MedsTableViewController" customModule="MedMinder" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Tcg-23-iQC" customClass="MedsView">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="separatorColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="sectionIndexBackgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="medCell" id="ZSB-bX-js5" userLabel="medCell" customClass="MedTableViewCell" customModule="MedMinder" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZSB-bX-js5" id="9Lv-L5-hQv">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qgl-eZ-MrQ">
+                                            <rect key="frame" x="358" y="6.5" width="51" height="31"/>
+                                            <color key="onTintColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="thumbTintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </switch>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="MedLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FKr-iw-uTq">
+                                            <rect key="frame" x="20" y="12" width="330" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="tintColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="Qgl-eZ-MrQ" secondAttribute="trailing" constant="7" id="5nl-0U-EdF"/>
+                                        <constraint firstItem="FKr-iw-uTq" firstAttribute="centerY" secondItem="9Lv-L5-hQv" secondAttribute="centerY" id="AfM-I0-rOb"/>
+                                        <constraint firstItem="FKr-iw-uTq" firstAttribute="leading" secondItem="9Lv-L5-hQv" secondAttribute="leading" constant="20" id="nz0-1X-pEw"/>
+                                        <constraint firstItem="Qgl-eZ-MrQ" firstAttribute="centerY" secondItem="9Lv-L5-hQv" secondAttribute="centerY" id="tbQ-LA-HTS"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="seR-Cy-tEW" id="HOs-2y-bfC"/>
+                            <outlet property="delegate" destination="seR-Cy-tEW" id="Csx-Ju-Pim"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="rqP-N9-0EL">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="YMP-FN-bXK" customClass="addMedButton">
+                            <color key="tintColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <segue destination="9wM-6d-uBd" kind="show" identifier="" id="d1w-Vt-9Ka"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c5A-c1-yMc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="957.97101449275374" y="39.508928571428569"/>
+        </scene>
+        <!--Add Med View Controller-->
+        <scene sceneID="jd3-KV-URj">
+            <objects>
+                <viewController id="9wM-6d-uBd" customClass="AddMedViewController" customModule="MedMinder" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2Qw-Qe-cqI">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name of Medicine:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eui-Nf-NOB">
+                                <rect key="frame" x="20" y="108" width="374" height="41"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <color key="textColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type medicine name here..." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SJo-ve-eQa">
+                                <rect key="frame" x="104" y="157" width="206" height="34"/>
+                                <color key="textColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="tintColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Eui-Nf-NOB" firstAttribute="centerX" secondItem="0SB-d4-oaE" secondAttribute="centerX" id="Fnx-W8-JG8"/>
+                            <constraint firstItem="Eui-Nf-NOB" firstAttribute="leading" secondItem="0SB-d4-oaE" secondAttribute="leading" constant="20" id="I4t-rM-TGR"/>
+                            <constraint firstItem="SJo-ve-eQa" firstAttribute="top" secondItem="Eui-Nf-NOB" secondAttribute="bottom" constant="8" id="exv-vA-rTS"/>
+                            <constraint firstItem="SJo-ve-eQa" firstAttribute="centerX" secondItem="0SB-d4-oaE" secondAttribute="centerX" id="fNh-Nm-ued"/>
+                            <constraint firstItem="0SB-d4-oaE" firstAttribute="trailing" secondItem="Eui-Nf-NOB" secondAttribute="trailing" constant="20" id="npR-BK-3E0"/>
+                            <constraint firstItem="Eui-Nf-NOB" firstAttribute="top" secondItem="0SB-d4-oaE" secondAttribute="top" constant="20" id="rQL-t8-1h5"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="0SB-d4-oaE"/>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="aCP-1f-u0z">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="T6r-Gv-DzM">
+                            <color key="tintColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iak-Hf-dMA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1818.840579710145" y="39.508928571428569"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="kgF-M8-6Ea">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uqR-QY-Xra" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="T2D-GC-bDn">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="seR-Cy-tEW" kind="relationship" relationship="rootViewController" id="ogI-P0-gfj"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gJa-wJ-UGL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="47.826086956521742" y="39.508928571428569"/>
+        </scene>
+    </scenes>
+</document>
