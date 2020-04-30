@@ -19,7 +19,7 @@ class AddMedViewController: UIViewController {
     
     @IBOutlet var nameTextField: UITextField!
     
-    var delegate: AddMedDelegate
+    var delegate: AddMedDelegate?
     
     
     override func viewDidLoad() {
@@ -34,14 +34,10 @@ class AddMedViewController: UIViewController {
         
         let med = Med(name: name)
         
-        delegate.addMed(med: med)
+        delegate?.addMed(med: med)
         
         dismiss(animated: true, completion: nil)
-        
-    }
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-        
-    }    
+    }
 }
+

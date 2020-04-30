@@ -45,6 +45,8 @@ class MedsTableViewController: UITableViewController {
     
     // MARK: - Navigation
     
+    @IBAction func addMed(_ sender: Any) {
+    }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "showAddMed" {
