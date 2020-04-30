@@ -30,24 +30,13 @@ class AddMedViewController: UIViewController {
     
     
     @IBAction func Save(_ sender: Any) {
-        
-        guard let name = nameTextField.text else { return }
-        
-        var meds: [String] = []
-        
-        
-        if let med = nameTextField.text {
-                meds.append(med)
-            }
-        
+        guard let name = nameTextField.text,
+            !name.isEmpty,
+        let delegate = delegate else  { return }
         let med = Med(name: name)
-        
-        delegate?.addMed(med: med)
-        
-        dismiss(animated: true, completion: nil)
-        
-        print("savebuttontapppe")
-    
+        delegate.addMed(med: med)
+        navigationController?.popViewController(animated: true)
+        print("save button tapped")
     }
 }
 

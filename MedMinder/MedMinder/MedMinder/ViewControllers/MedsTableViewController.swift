@@ -11,7 +11,7 @@ import UIKit
 class MedsTableViewController: UITableViewController {
     
     
-    var meds: [Med] = [Med(name: "Aspirin")]
+    var medController = MedController()
     
     override func viewDidLoad() {
         
@@ -27,7 +27,7 @@ class MedsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return meds.count
+        return medController.meds.count
         
     }
     
@@ -36,7 +36,7 @@ class MedsTableViewController: UITableViewController {
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "medCell", for: indexPath) as? MedTableViewCell else { fatalError("Cell identifier is wrong OR the cell is not of type MedTableViewCell") }
         
-        let med = meds[indexPath.row]
+        let med = medController.meds[indexPath.row]
         
         cell.nameLabel.text = med.name
         
@@ -50,9 +50,9 @@ class MedsTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "showAddMed" {
-            let addMedVC = segue.destination as? AddMedViewController
+            guard let addMedVC = segue.destination as? AddMedViewController else { return }
             
-            addMedVC?.delegate? = self
+            addMedVC.delegate = self
         }
         
         
@@ -61,7 +61,7 @@ class MedsTableViewController: UITableViewController {
 extension MedsTableViewController: AddMedDelegate {
     func addMed(med: Med) {
         
-        meds.append(med)
+        medController.makeMed(name: med.name)
         
         tableView.reloadData()
         
