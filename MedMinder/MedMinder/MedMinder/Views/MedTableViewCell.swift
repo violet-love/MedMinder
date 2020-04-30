@@ -10,6 +10,7 @@ import UIKit
 
 class MedTableViewCell: UITableViewCell {
     
+    @IBOutlet var nameLabel: UILabel!
     
 
 }
