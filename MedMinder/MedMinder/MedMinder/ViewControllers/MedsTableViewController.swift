@@ -52,7 +52,7 @@ class MedsTableViewController: UITableViewController {
         if segue.identifier == "showAddMed" {
             let addMedVC = segue.destination as? AddMedViewController
             
-            addMedVC?.delegate = self
+            addMedVC?.delegate? = self
         }
         
         
