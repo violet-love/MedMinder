@@ -43,9 +43,25 @@ class MedsTableViewController: UITableViewController {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            medController.meds.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+//            let appDel:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+//                       let context:NSManagedObjectContext = appDel.managedObjectContext!
+//                       context.deleteObject(medController.meds[indexPath.row] as NSManagedObject)
+//            medController.meds.remove(at: indexPath.row)
+//            tableView.deleteRows(at: [indexPath], with: .fade)
+            print(medController.meds)
+        } else if editingStyle == .insert {
+            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
+        }
+    }
+    
     // MARK: - Navigation
     
     @IBAction func addMed(_ sender: Any) {
+        
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
@@ -62,6 +78,8 @@ extension MedsTableViewController: AddMedDelegate {
     func addMed(med: Med) {
         
         medController.makeMed(name: med.name)
+        
+        print(medController.meds)
         
         tableView.reloadData()
         
